@@ -1,0 +1,17 @@
+<% content_for :navigation do %>
+  <%= render "shared/navbar" %>
+<% end %>
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="info-box">
+    <div class="info-box-title">
+      404 Not Found
+    </div>
+    <div class="info-box-info">
+      <div class="row">
+        <p>The page you are looking for cannot be found...go somewhere else.</p>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <%= image_tag("ducks.jpg", class: "img-responsive", style:"max-height: 450px; margin: 10px auto;") %>
+        </div>
+      </div>
+    </div>
+  </div>

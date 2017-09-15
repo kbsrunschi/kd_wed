@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: wedding_development
+
+test:
+  <<: *default
+  database: wedding_test
+
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#
+# You can use this database configuration with:
+#
+#   production:
+#
+production:
+  <<: *default
+  database: <%= ENV["WEDDING_DATABASE"] %>
+  password: <%= ENV["WEDDING_DATABASE_PASSWORD"] %>
+  url:      <%= ENV["WEDDING_URL"] %>
+  username: <%= ENV["WEDDING_USER"] %>

@@ -1,0 +1,13 @@
+var gift = $("[data-gift-id='<%= j(@gift.to_param) %>'");
+<% if @gift.user == current_user %>
+var link = gift.find(".claim-button");
+link.removeClass("claim-button");
+link.removeClass("btn-primary");
+link.addClass("unclaim-button");
+link.addClass("btn-danger");
+link.html("Unclaim");
+link.attr("href", "<%= j(unclaim_path(@gift)) %>");
+<% else %>
+    console.log($("#alreadyClaimedModal"));
+    $("#alreadyClaimedModal").modal();
+<% end %>

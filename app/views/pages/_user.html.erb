@@ -1,0 +1,4 @@
+<li>
+<%= link_to user_on_admin_page(user), edit_user_path(user) %>
+<%= simple_format(user.attendees, {class: "user-guest-list", style: "margin-left: 20px"}) if user.attending? %>
+</li>

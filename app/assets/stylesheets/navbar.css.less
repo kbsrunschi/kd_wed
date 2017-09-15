@@ -1,0 +1,84 @@
+@import "alignment";
+@import "colors";
+
+.navbar {
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 6px 10px 0px rgba(119,119,119,1);
+  -moz-box-shadow: 0px 6px 10px 0px rgba(119,119,119,1);
+  box-shadow: 0px 6px 10px 0px rgba(119,119,119,1);
+}
+
+.navbar, .navbar-nav a, .navbar-nav li.active, .navbar-nav li a {
+  background-color: transparent !important;
+  border: none;
+  font-size: 1.25em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar-default {
+  background-color: @darkMain !important;
+}
+
+.navbar-brand {
+  padding: 5px 5px;
+}
+
+@media (min-width: 768px) {
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+
+  .navbar .navbar-collapse {
+    .align-center;
+  }
+
+  .header-offset {
+    line-height: 3.5em !important;
+    &:hover {
+      .offset-underline;
+    }
+  }
+
+  .main-navbar .active {
+    .offset-underline;
+  }
+}
+
+.offset-underline {
+  outline-bottom: 2px solid white !important;
+  &:after {
+    content:"\a0";
+    display:block;
+    margin-top:-1em;
+    line-height:0px !important;
+    border-top:5px solid #FFF;
+  }
+}
+
+
+
+#admin {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: white;
+  font-size: .75em;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+#logout {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  font-size: .75em;
+  &:hover {
+    background-color: transparent;
+  }
+}

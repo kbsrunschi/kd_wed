@@ -1,0 +1,23 @@
+<%= form_for(@user, html: { class: "form-horizontal" }) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if current_user.admin? %>
+    <h2 class="align-left">Admin Fields</h2>
+    <%= render partial: "admin_form_fields", locals: {f: f} %>
+    <h2 class="align-left">User Fields</h2>
+  <% end %>
+  <%= render partial: "user_form_fields", locals: {f: f} %>
+  <div class="actions">
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <%= link_to "Cancel", cancel_redirect_path, class: "btn btn-default" %>
+  </div>
+<% end %>

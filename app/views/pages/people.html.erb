@@ -1,0 +1,9 @@
+<% content_for :navigation do %>
+  <%= render "shared/navbar" %>
+<% end %>
+<div class="wrapper">
+  <div class="people">
+    <%= render partial: "bridal_party_side", locals: { title: "Bridesmaids", people: @bridesmaids } %>
+    <%= render partial: "bridal_party_side", locals: { title: "Groomsmen", people: @groomsmen } %>
+  </div>
+</div>

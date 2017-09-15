@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <%= render "shared/navbar" %>
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="info-box">
+        <div class="info-box-title">
+          Users
+        </div>
+        <div class="info-box-info">
+          <%= render "shared/flash" %>
+          <h2 class="no-border"><%= link_to 'New User', new_user_path, class: "btn btn-primary", style: "font-size: 1em;" %></h2>
+          <% @users.each do |user| %>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 align-right align-left-xs">
+                <span class="text-muted"><em><%= "@#{user.username}" %></em></span>&emsp;&emsp;&emsp;<%= user.name %>
+              </div>
+              <div class="col-xs-12 col-sm-6 align-left user-in-list">
+                <%= link_to "Edit", edit_user_path(user) %>
+                <%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" } %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

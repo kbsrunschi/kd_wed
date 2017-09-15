@@ -1,0 +1,10 @@
+<% flash.each do |status, message| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-push-2">
+      <div class="alert <%= css_for_flash(status.to_sym) %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <%= message %>
+      </div>
+    </div>
+  </div>
+<% end %>

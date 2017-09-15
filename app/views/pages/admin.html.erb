@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <%= render "shared/navbar" %>
+  <div class="row">
+    <div class="col-xs-12 col-md-2">
+      <div class="info-box">
+        <div class="info-box-title">
+          Quick Links
+        </div>
+        <div class="info-box-info">
+          <ul class="quick-links">
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Add Gift", new_gift_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-10">
+      <div class="info-box">
+        <div class="info-box-title">
+          Admin Panel
+        </div>
+        <div class="info-box-info">
+          <%= render "shared/flash" %>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <h1 class="huge"><%= total_attending(@attending) %></h1>
+              <h2 class="no-border">Attending</h2>
+              <%= link_to "Toggle Guest List", "#", id: "guest-list-toggle", class: "btn btn-primary" %>
+              <ul class="align-left">
+                <%= render partial: "user", collection: @attending %>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <h1 class="huge"><%= @not_attending.count %></h1>
+              <h2 class="no-border">Regrets</h2>
+              <ul class="align-left">
+                <%= render partial: "user", collection: @not_attending %>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <h1 class="huge"><%= @unknown.count %></h1>
+              <h2 class="no-border">Unknown</h2>
+              <ul class="align-left">
+                <%= render partial: "user", collection: @unknown %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

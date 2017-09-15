@@ -1,0 +1,18 @@
+<div id="<%= section %>" class="row section">
+  <div class="col-xs-12">
+    <div class="info-box">
+      <div class="info-box-title"><%= section.titleize %></div>
+      <div class="info-box-info">
+        <div class="row">
+          <div class="grid">
+            <% if section == "claimed" %>
+              <%= render partial: "claimed_gift", collection: collection %>
+            <% else %>
+              <%= render partial: "gift", collection: collection %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

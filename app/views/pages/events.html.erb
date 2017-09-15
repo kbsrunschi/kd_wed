@@ -1,0 +1,31 @@
+<% content_for :navigation do %>
+  <%= render "events_navbar" %>
+  <%= render "shared/navbar" %>
+<% end %>
+<div class="wrapper-with-navbar">
+  <div class="col-xs-12">
+    <div id="events">
+      <div id="fullpage">
+        <div class="row section active" id="wedding-day">
+          <%= render partial: "event", locals: { event: @wedding, width: 2 } %>
+          <%= render partial: "event", locals: { event: @reception, width: 2 } %>
+        </div>
+        <div class="row section" id="hotel">
+          <%= render partial: "event", locals: { event: @hotel, width: 1 } %>
+        </div>
+        <% if current_user.rehearsal_info? %>
+          <div class="row section" id="rehearsal">
+            <%= render partial: "event", locals: { event: @rehearsal, width: current_user.rehearsal_count } if current_user.rehearsal? %>
+            <%= render partial: "event", locals: { event: @rehearsal_dinner, width: current_user.rehearsal_count } if current_user.rehearsal_dinner? %>
+          </div>
+        <% end %>
+        <% if current_user.shower_info? %>
+          <div class="row section" id="shower">
+            <%= render partial: "event", locals: { event: @chicago_shower, width: current_user.shower_count } if current_user.chicago_shower? %>
+            <%= render partial: "event", locals: { event: @tipton_shower, width: current_user.shower_count } if current_user.tipton_shower? %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

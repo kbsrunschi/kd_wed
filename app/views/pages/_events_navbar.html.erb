@@ -1,0 +1,27 @@
+<div class="row">
+  <nav class="navbar secondary-navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#secondary-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand visible-xs">EVENTS</div>
+    </div>
+    <div id="secondary-navbar-collapse" class="collapse navbar-collapse align-center">
+      <ul id="secondary-menu" class="nav navbar-nav">
+        <li class="active"><%= link_to "WEDDING DAY", "#wedding-day" %></li>
+        <li><%= link_to "HOTEL", "#hotel" %></li>
+        <% if current_user.rehearsal_info? %>
+          <li><%= link_to "REHEARSAL", "#rehearsal" %></li>
+        <% end %>
+        <% if current_user.shower_info? %>
+          <li><%= link_to "SHOWER", "#shower" %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+  </nav>
+</div>

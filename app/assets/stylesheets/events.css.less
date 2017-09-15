@@ -1,0 +1,37 @@
+@import "colors";
+@import "alignment";
+
+.event p {
+  margin-left: 10px;
+  font-size: .85em;
+}
+
+.event img {
+  margin: 10px auto 0px;
+  max-height: 300px;
+}
+
+.map {
+  padding: 20px 40px;
+  iframe {
+    border: 1px solid @darkAccent;
+  }
+}
+
+.section:not(:first-child) {
+  margin-top: 80px;
+}
+
+.section:before {
+  display: block;
+  content: "";
+  visibility: hidden;
+  @media(max-width: 767px) {
+    height: 100px;
+    margin-top: -100px;
+  }
+  @media(min-width: 768px) {
+    height: 167px;
+    margin-top: -167px;
+  }
+}

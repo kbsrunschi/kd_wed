@@ -1,0 +1,23 @@
+<% content_for :navigation do %>
+  <%= render "shared/navbar" %>
+<% end %>
+<div class="wrapper">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="info-box">
+      <div class="info-box-title">
+        RSVP Form
+      </div>
+      <div class="info-box-info">
+        <%= render "shared/flash" %>
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 style="border: none"><%= user_name(@user) %></h1>
+            <div class="wedding-form">
+              <%= render "edit_form" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

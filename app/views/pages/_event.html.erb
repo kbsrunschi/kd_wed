@@ -1,0 +1,44 @@
+<div class="<%= event_width_for(width) %>">
+  <div class="info-box">
+    <div class="info-box-title"><%= event.title %></div>
+    <div class="info-box-info align-left">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="event">
+            <% if event.coming_soon %>
+              <h1 class="no-border">Info Coming Soon!</h1>
+            <% else %>
+              <div class="col-xs-12 col-sm-7 col-sm-push-5">
+                <%= image_tag(event.pic_name, class: "img-responsive img-circle") %>
+              </div>
+              <div class="col-xs-12 col-sm-5 col-sm-pull-7 align-left">
+                <% if event.date %>
+                  <h3>Date</h3>
+                  <p><%= event.date %></p>
+                <% end %>
+                <% if event.time %>
+                  <h3>Time</h3>
+                  <p><%= event.time %></p>
+                <% end %>
+                <% if event.location %>
+                  <h3>Location</h3>
+                  <p><%= link_to (event.location).html_safe, event.map, target: :_blank %></p>
+                <% end %>
+                <% if event.contact_phone %>
+                  <h3>Phone</h3>
+                  <p><%= event.contact_phone %></p>
+                <% end %>
+              </div>
+              <% if event.notes %>
+                <div class="col-xs-12 align-left">
+                  <h4>Notes</h4>
+                  <p><%= (event.notes).html_safe %></p>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

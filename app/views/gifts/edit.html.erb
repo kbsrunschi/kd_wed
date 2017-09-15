@@ -1,0 +1,20 @@
+<% content_for :navigation do %>
+  <%= render "shared/navbar" %>
+<% end %>
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="info-box">
+    <div class="info-box-title">
+      <%= gift_form_name(@gift) %>
+    </div>
+    <div class="info-box-info">
+      <%= render "shared/flash" %>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="wedding-form">
+            <%= render 'form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

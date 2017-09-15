@@ -1,0 +1,8 @@
+var gift = $("[data-gift-id='<%= j(@gift.to_param) %>'");
+var link = gift.find(".unclaim-button");
+link.removeClass("unclaim-button");
+link.removeClass("btn-danger");
+link.addClass("claim-button");
+link.addClass("btn-primary");
+link.html("Claim");
+link.attr("href", "<%= j(claim_path(@gift)) %>");

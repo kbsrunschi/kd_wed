@@ -1,0 +1,105 @@
+@import "twitter/bootstrap/bootstrap";
+@import "colors";
+@import "alignment";
+
+@fontAwesomeEotPath: font-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: font-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: font-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: font-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: font-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:700,400,200");
+@import url("https://fonts.googleapis.com/css?family=Nixie+One");
+
+body {
+  background-color: @backgroundColor;
+  padding-top: 111px;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1440px; /* or 950px */
+}
+
+.login-wrapper {
+  @media (max-width: @screen-xs-max) {
+    margin-top: -101px;
+  }
+}
+
+.index-gallery {
+  margin-top: 20px;
+}
+
+.wrapper {
+  @media (max-width: @screen-xs-max) {
+    margin-top: -60px;
+  }
+}
+
+.wrapper-with-navbar {
+  @media (max-width: @screen-xs-max) {
+    margin-top: -10px;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    margin-top: 55px;
+  }
+}
+
+.email-link {
+  font-size: 1em;
+  padding: 0px;
+  &:visited {
+    color: @emailBlue;
+  }
+}
+
+.checkbox-fix {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  &:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.inline-checkbox-fix input[type="checkbox"] {
+  margin-top: 7px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.btn-primary {
+  background-color: @medMain;
+  &:visited {
+    background-color: @medMain;
+  }
+  &:hover {
+    background-color: @darkMain;
+  }
+}
+
+.wedding-form {
+  @media (max-width: @screen-xs-max) {
+    .align-left;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif;
+  font-variant: small-caps;
+  font-weight: 700;
+}
+
+.no-border {
+  border: none !important;
+}

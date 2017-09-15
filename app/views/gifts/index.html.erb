@@ -1,0 +1,38 @@
+<% content_for :navigation do %>
+  <%= render "navbar" %>
+  <%= render "shared/navbar" %>
+<% end %>
+<div class="wrapper-with-navbar">
+  <div class="col-xs-12">
+    <div id="gifts">
+      <%= render "shared/flash" %>
+      <% if @mine.empty? %>
+        <%= render "explanation" %>
+      <% else %>
+        <%= render partial: "gifts_section", locals: { section: "mine", collection: @mine } %>
+      <% end %>
+      <%= render partial: "gifts_section", locals: { section: "kitchen", collection: @kitchen } %>
+      <%= render partial: "gifts_section", locals: { section: "decorations", collection: @decorations } %>
+      <%= render partial: "gifts_section", locals: { section: "adventure", collection: @adventure } %>
+      <%= render partial: "gifts_section", locals: { section: "home", collection: @home } %>
+      <%= render partial: "gifts_section", locals: { section: "other", collection: @other } %>
+      <%= render partial: "gifts_section", locals: { section: "claimed", collection: @claimed } %>
+    </div>
+  </div>
+  <div class="modal fade" id="alreadyClaimedModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Not Fast Enough</h4>
+        </div>
+        <div class="modal-body">
+          Sorry. Someone has claimed the gift while you were browsing the page. Please reload the page to see an updated list.
+        </div>
+        <div class="modal-footer">
+          <button id="reloadPage" type="button" class="btn btn-primary">Reload Page</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

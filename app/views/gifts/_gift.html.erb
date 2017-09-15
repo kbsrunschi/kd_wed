@@ -1,0 +1,8 @@
+<div data-gift-id="<%= gift.id %>" class="gift col-xs-12 col-sm-6 col-md-3">
+  <div class="thin-border">
+    <h3 class="no-border"><%= gift.name %></h3>
+    <p class="gift-description"><%= gift.description %></p>
+    <%= link_to registry_claim_button(gift), registry_claim_path(gift), method: :post, class: registry_claim_class(gift), remote: true %>
+    <%= link_to "Edit", edit_gift_path(gift), class: "btn btn-default" if current_user.admin? %>
+  </div>
+</div>
